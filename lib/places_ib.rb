@@ -1,4 +1,5 @@
 class Places_ib
+    @@all_places =[]
 
   define_method(:initialize) do |places|
     @places = places
@@ -6,5 +7,8 @@ class Places_ib
 
   define_method(:places) do
     @places
+  end
+  define_singleton_method(:all) do
+    @@all_places
   end
 end
