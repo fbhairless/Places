@@ -2,9 +2,9 @@ require('rspec')
 require('places_ib')
 
 describe(Places_ib) do
-  # before () do
-  #   Place_ib.clear()
-  # end
+  before () do
+    Place_ib.clear()
+  end
 end
 
   describe('#places') do
@@ -24,6 +24,14 @@ end
         test_places = Places_ib.new("Kyoto, Japan")
         test_places.save()
         expect(Places_ib.all()).to(eq([test_places]))
+      end
+    end
+
+    describe(".clear") do
+      it("empty the places array") do
+        Places_ib.new("something,something darkside")
+        Places_ib.clear()
+        expect(Places_ib.all()).to(eq([]))
       end
     end
 end
