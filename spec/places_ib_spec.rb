@@ -18,4 +18,12 @@ end
       expect(Places_ib.all()).to(eq([]))
       end
     end
+
+    describe("#save") do
+      it("will add a place into the places_ib array") do
+        test_places = Places_ib.new("Kyoto, Japan")
+        test_places.save()
+        expect(Places_ib.all()).to(eq([test_places]))
+      end
+    end
 end
